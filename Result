@@ -1,0 +1,9 @@
+Human vs Random:1091 identical_pairs: 199
+percent_identical 89.64%
+Human vs Mouse: -250 identical_pairs: 12
+percent_identical 5.41%
+Mouse vs Random: -250 identical_pairs: 13
+percent_identical 5.86%
+Becuase 89.64%>5.86%>5.41%
+The most closely related sequences are Human and Random.
+The	human	sequence	more	closely	matches	the	Random than the mouse.
