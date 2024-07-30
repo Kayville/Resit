@@ -1,0 +1,19 @@
+# _*_ encoding = utf-8 _*_
+class Movie:
+def __init__(self, title, runtime, year_released, genre):       
+self.title = title 
+self.runtime = runtime       
+self.year_released = year_released        
+self.genre = genre   
+
+def print_details(self):       
+print(           
+f"Title: {self.title}, Runtime: {self.runtime} minutes, Year Released: {self.year_released}, Genre: {self.genre}")
+
+# Example of using the Movie class
+movie1 = Movie("Inception", 148, 2010, "Sci-Fi")
+movie2 = Movie("The Dark Knight", 152, 2008, "Action")
+
+# Print details of each movie using the print_details method
+movie1.print_details()
+movie2.print_details()
