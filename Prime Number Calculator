@@ -1,1 +1,17 @@
+# _*_ encoding = utf-8 _*_
+Define a flag variable initialized to 1, with n being a prime number by default
+n = int(input("Enter a positive integer:"))
+yes= 1
+for i in range(2,n):
+    if n%i==0:
+       yes=0
+       break
+#Define Boolean type variables
+n,it's a prime number=True
+n,it isn't a prime number=False
+#Output Boolean type variables
+if yes:
+   print(n,it's a prime number)
+else:
+   print(n,it isn't a prime number)
 
