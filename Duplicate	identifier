@@ -1,0 +1,24 @@
+# _*_ encoding = utf-8 _*_
+def separate_genes(gene_names):    
+unique_genes = []    
+duplicate_genes = []    
+gene_count = {}    
+# Count occurrences of each gene    
+for gene in gene_names:        
+if gene in gene_count:            
+gene_count[gene] += 1        
+else:            
+gene_count[gene] = 1    
+# Separate genes into unique and duplicate lists based on count    
+for gene, count in gene_count.items():        
+if count == 1:            
+unique_genes.append(gene)        
+else:            
+duplicate_genes.append(gene)    
+return unique_genes, duplicate_genes
+
+# Example usage:
+gene_names = ['DLX5', 'DLX6', 'NBAS', 'BRCA2', 'BRCA2', 'NBAS']
+unique_genes, duplicate_genes = separate_genes(gene_names)
+print(f"Unique Genes: {unique_genes}")
+print(f"Duplicate Genes: {duplicate_genes}")
