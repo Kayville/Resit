@@ -51,22 +51,22 @@ identical_pairs += 1
 else:           
 # If not defined, use default penalty value-4            
 score -= -4  
-# 使用默认惩罚值 -4   
-# 计算相同氨基酸对的百分比    
+# Use default penalty value-4   
+# Calculate the percentage of identical amino acid pairs   
 percent_identical = (identical_pairs / len(seq1)) * 100    
 percent_identical_formatted = f"{percent_identical:.2f}%"   
-# 相似性分数返回，以及相同的氨基酸对数目和百分比    
+# Return similarity score, as well as the number and percentage of identical amino acid pairs   
 return score , identical_pairs, percent_identical_formatteddef compare_sequences(seq1, seq2, blosum62):    
 similarity,identical_pairs, percent_identical = calculate_similarity(seq1, seq2, blosum62)    
 return similarity,identical_pairs, percent_identical# 读取BLOSUM62矩阵blosum62 = read_blosum62('blosum62.txt')
-# 定义序列
+#Define sequence
 human 
 = "MLSRAVCGTSRQLAPVLAYLGSRQKHSLPDLPYDYGALEPHINAQIMQLHHSKHHAAYVNNLNVTEEKYQEALAKGDVTAQIALQPALKFNGGGHINHSIFWTNLSPNGGGEPKGELLEAIKRDFGSFDKFKEKLTAASVGVQGSGWGWLGFNKERGHLQIAACPNQDPLQGTTGLIPLLGIDVWEHAYYLQYKNVRPDYLKAIWNVINWENVTERYMACKK"
 random 
 ="MLCRAACSTGRRLGPVAGAAGSRHKHSLPDLPYDYGALEPHINAQIMQLHHSKHHAAYVNNLNATEEKYHEALAKGDVTTQVALQPALKFNGGGHINHTIFWTNLSPKGGGEPKGELLEAIKRDFGSFEKFKEKLTAVSVGVQGSGWGWLGFNKEQGRLQIAACSNQDPLQGTTGLIPLLGIDVWEHAYYLQYKNVRPDYLKAIWNVINWENVTERYTACKK"
 mouse  
 ="WNGFSEWWTHEVDYNQKLTIENNQRPKIHEHEQWGLRQSPPPPKLCCPTCQMCERMRHQNRFAPLMEVGCRCMCWFHDWWVISVGTWLHTVIMYMMWPKRFHHNECPKACFRTTYTRKNHHALYWMLFEMCCYDQDVVWSKTHIFTTVRDIEVYVEQVFFIWGPLCHVAIACYEPVKTIRRRIPMYLCRHCIRGDNSYLLACCSIIYYFYHHMSYYGVLDIL"
-# 计算相似度
+# Calculate similarity
 print("Human:%s" % human)
 print("Mouse:%s" % mouse)
 print("Random:%s" % random)
@@ -76,7 +76,7 @@ human_vs_mouse,identical_pairs2,        percent_identical2
 compare_sequences(human, mouse, blosum62)
 mouse_vs_random,identical_pairs3,       percent_identical3 
 compare_sequences(mouse, random, blosum62)
-# 输出结果
+# Output result
 print("Human vs Random:", human_vs_random)
 print("identical_pairs:",identical_pairs1)
 print("percent_identical",percent_identical1,"\n")
@@ -86,7 +86,7 @@ print("percent_identical",percent_identical2,"\n")
 print("Mouse vs Random:", mouse_vs_random)
 print("identical_pairs:",identical_pairs3)
 print("percent_identical",percent_identical3,"\n")
-# 找出最密切的两个序列(找到分数最高的)
+# Find the two closest sequences (find the one with the highest score)
 max_similarity = max(human_vs_random, human_vs_mouse, mouse_vs_random)
 if max_similarity == human_vs_random:    
   print("The most closely related sequences are Human and Random.")
